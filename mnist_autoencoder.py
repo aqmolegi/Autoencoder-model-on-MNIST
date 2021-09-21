@@ -44,7 +44,7 @@ x = inputs
 for i in range(encoder_layers_num):
     x = Conv_layers(x, filters, kernel_size, activation='relu', padding='same', encoder_part=True)
 
-# get the shape of x before Flatten
+# get the shape of x before Flatten to compute the dimension of the decoder input layer
 shape = K.int_shape(x)
 
 x = Flatten()(x)
